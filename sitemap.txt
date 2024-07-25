@@ -1,3 +1,4 @@
+https://linvaux.github.io/2024/07/25/IDEA%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89/
 https://linvaux.github.io/2024/07/25/EasyExcel%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E5%85%83%E6%A0%BC%E6%A0%B7%E5%BC%8F/
 https://linvaux.github.io/2024/07/25/EasyExcel%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5%E5%AF%BC%E5%85%A5/
 https://linvaux.github.io/2024/07/25/%E5%9F%BA%E4%BA%8ECentos7%E7%9A%84UI%E8%87%AA%E5%8A%A8%E5%8C%96%E7%8E%AF%E5%A2%83Dockerfile/
@@ -14,5 +15,6 @@ https://linvaux.github.io/tags/Mac-JDK/
 https://linvaux.github.io/tags/Java-EasyExcel/
 https://linvaux.github.io/tags/Docker/
 https://linvaux.github.io/tags/Docker-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/
+https://linvaux.github.io/tags/Java-IDEA/
 https://linvaux.github.io/categories/%E6%B5%8B%E8%AF%95/
 https://linvaux.github.io/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/
