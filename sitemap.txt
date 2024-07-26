@@ -1,3 +1,9 @@
+https://linvaux.github.io/2024/07/26/Jdk11%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF/
+https://linvaux.github.io/2024/07/26/IDEA%E9%AB%98%E6%95%88%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%EF%BC%88%E4%B8%80%EF%BC%89/
+https://linvaux.github.io/2024/07/26/Centos%E4%BD%BF%E7%94%A8Tomcat%E5%AE%89%E8%A3%85Jenkins/
+https://linvaux.github.io/2024/07/26/Springboot%E4%B8%9A%E5%8A%A1%E4%BF%A1%E6%81%AF%E5%9B%BD%E9%99%85%E5%8C%96/
+https://linvaux.github.io/2024/07/26/FileBeat-LogStash%E5%AE%9E%E7%8E%B0MySQL%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97%E8%A7%A3%E6%9E%90/
+https://linvaux.github.io/2024/07/26/EasyExcel%E8%A7%A3%E5%86%B3%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F%E5%A4%AA%E5%A4%9A%E5%AF%BC%E8%87%B4%E7%9A%84-The-maximum-number-of-Cell-Styles-was-exceeded-%E5%BC%82%E5%B8%B8/
 https://linvaux.github.io/2024/07/25/IDEA%E6%8F%92%E4%BB%B6%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89/
 https://linvaux.github.io/2024/07/25/EasyExcel%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E5%85%83%E6%A0%BC%E6%A0%B7%E5%BC%8F/
 https://linvaux.github.io/2024/07/25/EasyExcel%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5%E5%AF%BC%E5%85%A5/
@@ -16,5 +22,10 @@ https://linvaux.github.io/tags/Java-EasyExcel/
 https://linvaux.github.io/tags/Docker/
 https://linvaux.github.io/tags/Docker-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/
 https://linvaux.github.io/tags/Java-IDEA/
+https://linvaux.github.io/tags/Jenkins/
+https://linvaux.github.io/tags/Java/
+https://linvaux.github.io/tags/LogStash/
+https://linvaux.github.io/tags/IDEA/
+https://linvaux.github.io/tags/SpringBoot/
 https://linvaux.github.io/categories/%E6%B5%8B%E8%AF%95/
 https://linvaux.github.io/categories/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/
