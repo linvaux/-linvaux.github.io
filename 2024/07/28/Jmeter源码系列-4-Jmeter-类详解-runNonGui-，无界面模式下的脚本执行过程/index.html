@@ -17,16 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档 | 写bug的大耳朵图图</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="写bug的大耳朵图图">
-<meta property="og:url" content="https://linvaux.github.io/archives/page/3/index.html">
+  <title>Jmeter源码系列(4) - Jmeter 类详解-runNonGui()，无界面模式下的脚本执行过程 | 写bug的大耳朵图图</title>
+  <meta name="description" content="在前面几篇文章中，我们已经知道了 Jmeter 的启动过程，接下来我们一起看下，在 NON-GUI 模式下，Jmeter 是如何开始执行我们的 jmx 脚本的 startNonGuirunNonGui">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jmeter源码系列(4) - Jmeter 类详解-runNonGui()，无界面模式下的脚本执行过程">
+<meta property="og:url" content="https://linvaux.github.io/2024/07/28/Jmeter%E6%BA%90%E7%A0%81%E7%B3%BB%E5%88%97-4-Jmeter-%E7%B1%BB%E8%AF%A6%E8%A7%A3-runNonGui-%EF%BC%8C%E6%97%A0%E7%95%8C%E9%9D%A2%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/index.html">
 <meta property="og:site_name" content="写bug的大耳朵图图">
+<meta property="og:description" content="在前面几篇文章中，我们已经知道了 Jmeter 的启动过程，接下来我们一起看下，在 NON-GUI 模式下，Jmeter 是如何开始执行我们的 jmx 脚本的 startNonGuirunNonGui">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-28T14:03:54.000Z">
+<meta property="article:modified_time" content="2024-07-28T14:55:00.439Z">
 <meta property="article:author" content="Wick">
+<meta property="article:tag" content="Jmeter源码系列">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://linvaux.github.io/archives/page/3/index.html">
+  <link rel="canonical" href="https://linvaux.github.io/2024/07/28/Jmeter%E6%BA%90%E7%A0%81%E7%B3%BB%E5%88%97-4-Jmeter-%E7%B1%BB%E8%AF%A6%E8%A7%A3-runNonGui-%EF%BC%8C%E6%97%A0%E7%95%8C%E9%9D%A2%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/index.html">
   
     <link rel="alternate" href="/atom.xml" title="写bug的大耳朵图图" type="application/atom+xml">
   
@@ -245,133 +250,123 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档</h1>
-	      <p class="text-muted">共 28 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-Jmeter源码系列-4-Jmeter-类详解-runNonGui-，无界面模式下的脚本执行过程" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Jmeter源码系列(4) - Jmeter 类详解-runNonGui()，无界面模式下的脚本执行过程
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2024" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2024
-            </a>
-            <!-- <a href="/archives/2024" class="archive-year">2024</a> -->
-          </h3>
-        </div>
-        <div id="collapse2024" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2024">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2024/07/25/EasyExcel%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E6%AE%B5%E5%AF%BC%E5%85%A5/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2024-07-25T15:10:00.000Z" itemprop="datePublished">2024-07-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> EasyExcel自定义字段导入
-</a>
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2024/07/28/Jmeter%E6%BA%90%E7%A0%81%E7%B3%BB%E5%88%97-4-Jmeter-%E7%B1%BB%E8%AF%A6%E8%A7%A3-runNonGui-%EF%BC%8C%E6%97%A0%E7%95%8C%E9%9D%A2%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/" class="article-date">
+	  <time datetime="2024-07-28T14:03:54.000Z" itemprop="datePublished">2024-07-28</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Jmeter%E6%BA%90%E7%A0%81%E7%B3%BB%E5%88%97/" rel="tag">Jmeter源码系列</a>
+  </span>
 
 
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/07/28/Jmeter%E6%BA%90%E7%A0%81%E7%B3%BB%E5%88%97-4-Jmeter-%E7%B1%BB%E8%AF%A6%E8%A7%A3-runNonGui-%EF%BC%8C%E6%97%A0%E7%95%8C%E9%9D%A2%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 52(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>在前面几篇文章中，我们已经知道了 Jmeter 的启动过程，接下来我们一起看下，在 NON-GUI 模式下，Jmeter 是如何开始执行我们的 jmx 脚本的</p>
+<h2 id="startNonGui"><a href="#startNonGui" class="headerlink" title="startNonGui"></a>startNonGui</h2><h2 id="runNonGui"><a href="#runNonGui" class="headerlink" title="runNonGui"></a>runNonGui</h2>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://linvaux.github.io/2024/07/28/Jmeter%E6%BA%90%E7%A0%81%E7%B3%BB%E5%88%97-4-Jmeter-%E7%B1%BB%E8%AF%A6%E8%A7%A3-runNonGui-%EF%BC%8C%E6%97%A0%E7%95%8C%E9%9D%A2%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/" title="Jmeter源码系列(4) - Jmeter 类详解-runNonGui()，无界面模式下的脚本执行过程" target="_blank" rel="external">https://linvaux.github.io/2024/07/28/Jmeter源码系列-4-Jmeter-类详解-runNonGui-，无界面模式下的脚本执行过程/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://gitee.com/linvaux" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar1.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://gitee.com/linvaux" target="_blank"><span class="text-dark">大耳朵图图</span><small class="ml-1x">Java开发/高级测试开发</small></a></h3>
+        <div>一个持续学习的靓仔</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
-    
-    
-<a href="/2024/07/25/EasyExcel%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E5%85%83%E6%A0%BC%E6%A0%B7%E5%BC%8F/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2024-07-25T15:09:03.000Z" itemprop="datePublished">2024-07-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> EasyExcel自定义单元格样式
-</a>
-
-
-  
-    
-    
-    
-<a href="/2024/07/25/%E5%9F%BA%E4%BA%8ECentos7%E7%9A%84UI%E8%87%AA%E5%8A%A8%E5%8C%96%E7%8E%AF%E5%A2%83Dockerfile/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2024-07-25T15:08:06.000Z" itemprop="datePublished">2024-07-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 基于Centos7的UI自动化环境Dockerfile
-</a>
-
-
-  
-    
-    
-    
-<a href="/2024/07/25/%E5%9F%BA%E4%BA%8ECentos7%E7%9A%84Python3-7%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2024-07-25T15:07:16.000Z" itemprop="datePublished">2024-07-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 基于Centos7的Python3.7镜像构建
-</a>
-
-
-  
-    
-    
-    
-<a href="/2024/07/25/%E5%9F%BA%E4%BA%8EUbuntu16-04%E7%9A%84Python3-7%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BA/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2024-07-25T15:06:21.000Z" itemprop="datePublished">2024-07-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 基于Ubuntu16.04的Python3.7镜像构建
-</a>
-
-
-  
-    
-    
-    
-<a href="/2024/07/25/CentOS%E5%AE%89%E8%A3%85Google-Chrome%E6%B5%8F%E8%A7%88%E5%99%A8/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2024-07-25T15:05:23.000Z" itemprop="datePublished">2024-07-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> CentOS安装Google-Chrome浏览器
-</a>
-
-
-  
-    
-    
-    
-<a href="/2024/07/25/Mac%E4%BD%BF%E7%94%A8Jenv%E5%AE%9E%E7%8E%B0Jdk%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2024-07-25T14:53:58.000Z" itemprop="datePublished">2024-07-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Mac使用Jenv实现Jdk多版本管理
-</a>
-
-
-  
-    
-    
-    
-<a href="/2024/07/25/Pytest%E5%8F%82%E6%95%B0/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2024-07-25T14:40:14.000Z" itemprop="datePublished">2024-07-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Pytest参数
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
+  <section id="comments">
   	
+      <div id="vcomments"></div>
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <div class="pager pull-left">
-            
-            <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="icon icon-angle-left"></i> 上一页</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-            
-            <a class="next disabled" href="javascript:;">下一页 <i class="icon icon-angle-right"></i></a>
-            
-        </div>
-        <div class="total-article bar-right">Page 3 of 3</div>
-        </div>
-    </nav>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
     
- 	
+    
+    <li class="next">
+      <a href="/2024/07/26/Java%E9%9B%86%E6%88%90GradleToolingAPI%E7%BC%96%E8%AF%91Gradle%E9%A1%B9%E7%9B%AE/" title="Java集成GradleToolingAPI编译Gradle项目"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -416,6 +411,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
